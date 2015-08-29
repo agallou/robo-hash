@@ -1,0 +1,15 @@
+{
+    "name": "agallou/robo-hash",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Adrien Gallou",
+            "email": "adriengallou@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4":{
+            "Agallou\\RoboHash\\": "src"
+        }
+    }
+}
