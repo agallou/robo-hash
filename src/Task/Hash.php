@@ -32,7 +32,7 @@ class Hash extends BaseTask
      *
      * @param string $dst
      *
-     * @return RobotHash The current instance
+     * @return Hash The current instance
      */
     public function to($dst)
     {
