@@ -8,7 +8,7 @@ trait loadTasks
      *
      * @return RobotHash
      */
-    protected function tashHash($file)
+    protected function taskHash($file)
     {
         return new Task\RobotHash($file);
     }
