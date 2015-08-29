@@ -4,7 +4,7 @@ namespace Agallou\RoboHash\Task;
 
 use Robo\Task\BaseTask;
 
-class RobotHash extends BaseTask
+class Hash extends BaseTask
 {
 
     use \Robo\Task\FileSystem\loadShortcuts;

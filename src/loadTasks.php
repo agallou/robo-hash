@@ -10,6 +10,6 @@ trait loadTasks
      */
     protected function taskHash($file)
     {
-        return new Task\RobotHash($file);
+        return new Task\Hash($file);
     }
 }
