@@ -1,4 +1,5 @@
 <?php
+
 namespace Agallou\RoboHash;
 
 trait loadTasks
@@ -10,6 +11,6 @@ trait loadTasks
      */
     protected function taskHash($file)
     {
-        return new Task\Hash($file);
+        return $this->task(Task\Hash::class, $file);
     }
 }

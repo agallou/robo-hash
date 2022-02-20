@@ -2,12 +2,14 @@
 
 namespace Agallou\RoboHash\Task;
 
+use Robo\Common\BuilderAwareTrait;
 use Robo\Task\BaseTask;
 
-class Hash extends BaseTask
+class Hash extends BaseTask implements \Robo\Contract\BuilderAwareInterface
 {
-
-    use \Robo\Task\FileSystem\loadShortcuts;
+    //use \Robo\Task\Filesystem\Tasks;
+    use BuilderAwareTrait;
+    //use \Robo\Task\Filesystem\Shortcuts;
 
     /**
      * @var string files
@@ -46,6 +48,14 @@ class Hash extends BaseTask
      */
     public function run()
     {
-        $this->_rename($this->file, $this->dst . pathinfo($this->file, PATHINFO_FILENAME) . '.' . substr(md5_file($this->file), 0, 8) . '.' . pathinfo($this->file, PATHINFO_EXTENSION));
+        $this
+            ->collectionBuilder()
+            ->taskFilesystemStack()
+            ->rename(
+                $this->file,
+                $this->dst . pathinfo($this->file, PATHINFO_FILENAME) . '.' . substr(md5_file($this->file), 0, 8) . '.' . pathinfo($this->file, PATHINFO_EXTENSION)
+            )
+            ->run()
+        ;
     }
 }
